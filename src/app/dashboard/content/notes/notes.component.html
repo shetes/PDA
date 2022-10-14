@@ -1,1 +1,19 @@
-<p>note works!</p>
+<div class="container">
+  <div>
+    <input
+      type="text"
+      placeholder="Untitled"
+      name=""
+      id="notesTitleText"
+      style="width: 100%"
+      [(ngModel)]="this.note.Title"
+    />
+  </div>
+  <br />
+  <textarea
+    *ngIf="this.title != ''"
+    id="notesMainText"
+    style="width: 100%; height: 100vw"
+    placeholder="Start typing here"
+  ></textarea>
+</div>
