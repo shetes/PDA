@@ -13,6 +13,7 @@ import { NotesComponent } from './dashboard/content/notes/notes.component';
 import { TasksComponent } from './dashboard/content/tasks/tasks.component';
 import { BookmarksComponent } from './dashboard/content/bookmarks/bookmarks.component';
 import { fromEventPattern } from 'rxjs';
+import { HomeComponent } from './dashboard/content/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { fromEventPattern } from 'rxjs';
     NotesComponent,
     TasksComponent,
     BookmarksComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [ShareService, NotesService],

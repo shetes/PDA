@@ -6,14 +6,15 @@
       name=""
       id="notesTitleText"
       style="width: 100%"
-      [(ngModel)]="this.note.Title"
+      [(ngModel)]="this.note.title"
     />
   </div>
   <br />
   <textarea
-    *ngIf="this.title != ''"
+    *ngIf="this.note.title != ''"
     id="notesMainText"
     style="width: 100%; height: 100vw"
     placeholder="Start typing here"
+    [(ngModel)]="this.note.content"
   ></textarea>
 </div>

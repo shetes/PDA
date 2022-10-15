@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ShareService {
   subNotes = new BehaviorSubject<boolean>(false);
@@ -12,19 +12,16 @@ export class ShareService {
   changeSubNotes(val: boolean) {
     this.resetAll(false);
     this.subNotes.next(val);
-    console.log('Changed to: ' + val)
   }
 
   changeSubTasks(val: boolean) {
     this.resetAll(false);
     this.subTasks.next(val);
-    console.log('Changed to: ' + val)
   }
 
   changeSubBookmarks(val: boolean) {
     this.resetAll(false);
     this.subBookmarks.next(val);
-    console.log('Changed to: ' + val)
   }
 
   resetAll(flag: boolean) {
@@ -33,5 +30,5 @@ export class ShareService {
     this.subNotes.next(flag);
   }
 
-  constructor() { }
+  constructor() {}
 }

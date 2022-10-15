@@ -19,15 +19,12 @@ export class ContentComponent implements OnInit {
     this.unsetAll();
     this.shareService.subNotes.subscribe((flag) => {
       this.displayNotes = flag;
-      console.log('Content Notes: ' + this.displayNotes);
     });
     this.shareService.subTasks.subscribe((flag) => {
       this.displayTasks = flag;
-      console.log('Content Tasks: ' + this.displayTasks);
     });
     this.shareService.subBookmarks.subscribe((flag) => {
       this.displayBookmarks = flag;
-      console.log('Content Bookmarks: ' + this.displayBookmarks);
     });
   }
 

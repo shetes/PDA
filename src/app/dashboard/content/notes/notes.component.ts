@@ -8,33 +8,32 @@ import { NotesService } from 'src/app/Services/notes.service';
   styleUrls: ['./notes.component.css'],
 })
 export class NotesComponent implements OnInit {
-  note?: Note;
+  note: Note = new Note();
   // ?: nullish operator, allows shit to be null
-  constructor() {}
-  ngOnInit(): void {
-    this.note = new Note();
-    this.note.Title = '';
+  constructor(private service: NotesService) {}
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    if (this.note.content != '') {
+      this.service.addNote(this.note);
+    }
   }
-
-  title = '';
-
-  addNewNote() {}
 }
 export class Note {
   private _title: string = '';
   private _content: string = '';
 
-  public get Title() {
+  public get title() {
     return this._title;
   }
-  public set Title(value: string) {
+  public set title(value: string) {
     this._title = value;
   }
 
-  public get Content() {
+  public get content() {
     return this._content;
   }
-  public set Content(value: string) {
+  public set content(value: string) {
     this._content = value;
   }
 }
