@@ -20,20 +20,20 @@ export class NotesComponent implements OnInit {
   }
 }
 export class Note {
-  private _title: string = '';
-  private _content: string = '';
+  title: string = '';
+  content: string = '';
 
-  public get title() {
-    return this._title;
-  }
-  public set title(value: string) {
-    this._title = value;
-  }
+  // public get title() {
+  //   return this._title;
+  // }
+  // public set title(value: string) {
+  //   this._title = value;
+  // }
 
-  public get content() {
-    return this._content;
-  }
-  public set content(value: string) {
-    this._content = value;
-  }
+  // public get content() {
+  //   return this._content;
+  // }
+  // public set content(value: string) {
+  //   this._content = value;
+  // }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { VNavComponent } from './v-nav/v-nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,7 +12,6 @@ import { NotesService } from './Services/notes.service';
 import { NotesComponent } from './dashboard/content/notes/notes.component';
 import { TasksComponent } from './dashboard/content/tasks/tasks.component';
 import { BookmarksComponent } from './dashboard/content/bookmarks/bookmarks.component';
-import { fromEventPattern } from 'rxjs';
 import { HomeComponent } from './dashboard/content/home/home.component';
 
 @NgModule({
@@ -27,7 +26,7 @@ import { HomeComponent } from './dashboard/content/home/home.component';
     BookmarksComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [ShareService, NotesService],
   bootstrap: [AppComponent],
 })
