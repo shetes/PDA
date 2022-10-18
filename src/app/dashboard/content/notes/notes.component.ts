@@ -12,9 +12,15 @@ export class NotesComponent implements OnInit {
   // ?: nullish operator, allows shit to be null
   constructor(private service: NotesService) {}
   ngOnInit(): void {}
-
+  tags: Array<any> = [
+    { text: 'Programming', id: 1 },
+    { text: 'Mathematics', id: 2 },
+  ];
+  selectedTag: number = 0;
   ngOnDestroy(): void {
     if (this.note.content != '') {
+      this.note.tagId = this.selectedTag;
+      console.log(this.note);
       this.service.addNote(this.note);
     }
   }
@@ -22,18 +28,5 @@ export class NotesComponent implements OnInit {
 export class Note {
   title: string = '';
   content: string = '';
-
-  // public get title() {
-  //   return this._title;
-  // }
-  // public set title(value: string) {
-  //   this._title = value;
-  // }
-
-  // public get content() {
-  //   return this._content;
-  // }
-  // public set content(value: string) {
-  //   this._content = value;
-  // }
+  tagId: number = 0;
 }

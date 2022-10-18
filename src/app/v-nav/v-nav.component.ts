@@ -4,7 +4,7 @@ import { ShareService } from 'src/share.service';
 @Component({
   selector: 'app-v-nav',
   templateUrl: './v-nav.component.html',
-  styleUrls: ['./v-nav.component.css']
+  styleUrls: ['./v-nav.component.css'],
 })
 export class VNavComponent implements OnInit {
   onClickBookmarks() {
@@ -18,10 +18,9 @@ export class VNavComponent implements OnInit {
   }
 
   displayNotes: boolean = false;
-  constructor(private shareService: ShareService) { }
+  constructor(private shareService: ShareService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-
+  onClickExpandNotes() {}
 }

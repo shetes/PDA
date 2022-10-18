@@ -9,6 +9,19 @@
       [(ngModel)]="this.note.title"
     />
   </div>
+  <select
+    [(ngModel)]="this.selectedTag"
+    class="form-select form-select-sm"
+    aria-label=".form-select-sm example"
+  >
+    <option value="0">Select a tag</option>
+
+    <option *ngFor="let tag of this.tags" [value]="tag.id">
+      <!-- displaying text -->
+      {{ tag.text }}
+    </option>
+  </select>
+
   <br />
   <textarea
     *ngIf="this.note.title != ''"
