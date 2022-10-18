@@ -16,6 +16,15 @@
           />
         </svg>
       </span>
+      <ul>
+        <li
+          [value]="note.id"
+          *ngFor="let note of this.notes"
+          (click)="onClickNoteTitle($event)"
+        >
+          {{ note.title }}
+        </li>
+      </ul>
     </li>
     <li class="nav-item">
       <a href="#" (click)="onClickTasks()"> Tasks </a>

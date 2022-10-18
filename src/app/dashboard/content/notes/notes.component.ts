@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Form } from '@angular/forms';
 import { NotesService } from 'src/app/Services/notes.service';
 
@@ -8,7 +8,7 @@ import { NotesService } from 'src/app/Services/notes.service';
   styleUrls: ['./notes.component.css'],
 })
 export class NotesComponent implements OnInit {
-  note: Note = new Note();
+  @Input() note: Note = new Note();
   // ?: nullish operator, allows shit to be null
   constructor(private service: NotesService) {}
   ngOnInit(): void {}
@@ -29,4 +29,5 @@ export class Note {
   title: string = '';
   content: string = '';
   tagId: number = 0;
+  id: number = 0;
 }

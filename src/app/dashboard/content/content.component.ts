@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from 'src/share.service';
+import { Note } from './notes/notes.component';
 
 @Component({
   selector: 'app-content',
@@ -10,6 +11,7 @@ export class ContentComponent implements OnInit {
   displayNotes: boolean = false;
   displayTasks: boolean = false;
   displayBookmarks: boolean = false;
+  note: Note = new Note();
 
   constructor(private shareService: ShareService) {}
 
