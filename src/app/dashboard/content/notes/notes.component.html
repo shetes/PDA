@@ -14,8 +14,8 @@
     class="form-select form-select-sm"
     aria-label=".form-select-sm example"
   >
-    <option value="0">Select a tag</option>
-
+    <option value="0" class="font-italic font-weight-light">Select a tag</option>
+    <hr>
     <option *ngFor="let tag of this.tags" [value]="tag.id">
       <!-- displaying text -->
       {{ tag.text }}
