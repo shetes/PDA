@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ShareService } from 'src/share.service';
+import { ShareService } from 'src/Services/share.service';
 import { Note } from '../dashboard/content/notes/notes.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 

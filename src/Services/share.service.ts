@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Note } from './app/dashboard/content/notes/notes.component';
+import { Note } from '../app/dashboard/content/notes/notes.component';
 
 @Injectable({
   providedIn: 'root',

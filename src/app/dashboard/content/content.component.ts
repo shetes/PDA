@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShareService } from 'src/share.service';
+import { ShareService } from 'src/Services/share.service';
 import { Note } from './notes/notes.component';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Form } from '@angular/forms';
-import { NotesService } from 'src/app/Services/notes.service';
+import { NotesService } from 'src/app/dashboard/content/notes/notes.service';
 
 @Component({
   selector: 'app-notes',
