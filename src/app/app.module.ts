@@ -11,8 +11,8 @@ import { ShareService } from 'src/Services/share.service';
 import { NotesService } from './dashboard/content/notes/notes.service';
 import { NotesComponent } from './dashboard/content/notes/notes.component';
 import { TasksComponent } from './dashboard/content/tasks/tasks.component';
-import { BookmarksComponent } from './dashboard/content/bookmarks/bookmarks.component';
 import { HomeComponent } from './dashboard/content/home/home.component';
+import { ReadingListComponent } from './dashboard/content/reading-list/reading-list.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { HomeComponent } from './dashboard/content/home/home.component';
     ContentComponent,
     NotesComponent,
     TasksComponent,
-    BookmarksComponent,
     HomeComponent,
+    ReadingListComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [ShareService, NotesService],

@@ -9,9 +9,9 @@ import { Note } from './notes/notes.component';
 })
 export class ContentComponent implements OnInit {
   displayHome: boolean = false;
-  displayNotes: boolean = true;
+  displayNotes: boolean = false;
   displayTasks: boolean = false;
-  displayBookmarks: boolean = false;
+  displayReadingList: boolean = false;
   note: Note = new Note();
 
   constructor(private shareService: ShareService) {}
@@ -19,14 +19,10 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterContentChecked(): void {
-    this.displayBookmarks = this.shareService.displayBookmarks;
     this.displayNotes = this.shareService.displayNotes;
     this.displayHome = this.shareService.displayHome;
     this.displayTasks = this.shareService.displayTasks;
+    this.displayReadingList = this.shareService.displayReadingList;
     this.note = this.shareService.note;
-  }
-
-  unsetAll() {
-    this.displayBookmarks = this.displayNotes = this.displayTasks = false;
   }
 }

@@ -1,4 +1,5 @@
+<app-home *ngIf="this.displayHome"></app-home>
 <app-notes [note]="this.note" *ngIf="this.displayNotes"></app-notes>
 <app-tasks *ngIf="this.displayTasks"></app-tasks>
-<app-bookmarks *ngIf="this.displayBookmarks"></app-bookmarks>
+<app-reading-list *ngIf="this.displayReadingList"></app-reading-list>
 <app-home></app-home>

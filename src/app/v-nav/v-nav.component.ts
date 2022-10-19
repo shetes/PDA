@@ -15,18 +15,15 @@ export class VNavComponent implements OnInit {
 
   notes: Array<Note> = [];
 
-  onClickBookmarks() {
-    this.shareService.resetAll(false);
-    this.shareService.displayBookmarks = true;
-  }
   onClickTasks() {
-    this.shareService.resetAll(false);
-    this.shareService.displayTasks = true;
+    this.shareService.setDisplayTasks();
+  }
+  onClickReadingList() {
+    this.shareService.setDisplayReadingList();
   }
   onClickNotes() {
-    this.shareService.resetAll(false);
+    this.shareService.setDisplayNotes();
     this.shareService.note = new Note();
-    this.shareService.displayNotes = true;
   }
 
   onClickExpandNotes() {
