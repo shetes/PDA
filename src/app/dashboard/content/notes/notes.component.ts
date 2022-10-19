@@ -17,7 +17,8 @@ export class NotesComponent implements OnInit {
     { text: 'Mathematics', id: 2 },
   ];
   ngOnDestroy(): void {
-    if (this.note.content != '') {
+    console.log('Before: ' + JSON.stringify(this.note));
+    if (!this.note.id && this.note.content != '') {
       console.log(this.note);
       this.service.addNote(this.note);
     }

@@ -16,16 +16,18 @@ export class VNavComponent implements OnInit {
   notes: Array<Note> = [];
 
   onClickBookmarks() {
-    this.shareService.changeSubBookmarks(true);
+    this.shareService.resetAll(false);
+    this.shareService.displayBookmarks = true;
   }
   onClickTasks() {
-    this.shareService.changeSubTasks(true);
+    this.shareService.resetAll(false);
+    this.shareService.displayTasks = true;
   }
   onClickNotes() {
-    this.shareService.changeSubNotes(true);
+    this.shareService.resetAll(false);
+    this.shareService.note = new Note();
+    this.shareService.displayNotes = true;
   }
-
-  displayNotes: boolean = false;
 
   onClickExpandNotes() {
     let options = { headers: { 'Content-Type': 'application/json' } };
@@ -40,12 +42,15 @@ export class VNavComponent implements OnInit {
   onClickNoteTitle(event: any) {
     let targetNoteId = event.target.value;
     let options = { headers: { 'Content-Type': 'application/json' } };
+    this.shareService.resetAll(false);
+    this.shareService.displayNotes = true;
 
     this.http
       .get('http://localhost:5000/api/v1/notes/' + targetNoteId, options)
       .subscribe((data: any) => {
-        this.notes = data;
-        console.log(data);
+        let note: Note = data[0];
+        this.shareService.note = note;
+        console.log(note);
       });
   }
 }

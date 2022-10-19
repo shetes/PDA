@@ -8,7 +8,8 @@ import { Note } from './notes/notes.component';
   styleUrls: ['./content.component.css'],
 })
 export class ContentComponent implements OnInit {
-  displayNotes: boolean = false;
+  displayHome: boolean = false;
+  displayNotes: boolean = true;
   displayTasks: boolean = false;
   displayBookmarks: boolean = false;
   note: Note = new Note();
@@ -18,16 +19,11 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterContentChecked(): void {
-    this.unsetAll();
-    this.shareService.subNotes.subscribe((flag) => {
-      this.displayNotes = flag;
-    });
-    this.shareService.subTasks.subscribe((flag) => {
-      this.displayTasks = flag;
-    });
-    this.shareService.subBookmarks.subscribe((flag) => {
-      this.displayBookmarks = flag;
-    });
+    this.displayBookmarks = this.shareService.displayBookmarks;
+    this.displayNotes = this.shareService.displayNotes;
+    this.displayHome = this.shareService.displayHome;
+    this.displayTasks = this.shareService.displayTasks;
+    this.note = this.shareService.note;
   }
 
   unsetAll() {

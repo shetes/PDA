@@ -17,7 +17,7 @@ export class NotesService {
     console.log(note);
 
     this.http
-      .post('http://localhost:5000/notes', note, this.options)
+      .post('http://localhost:5000/api/v1/notes', note, this.options)
       .subscribe((data) => {
         console.log(data);
       });
@@ -26,7 +26,7 @@ export class NotesService {
   getAllNotes() {
     let notes: Array<Note> = [];
     this.http
-      .get('http://localhost:5000/notes', this.options)
+      .get('http://localhost:5000/api/vi/notes', this.options)
       // .post('http://20.12.31.246:5000/api/v1/notes', note, options)
       .subscribe((data) => {
         console.log(data);
